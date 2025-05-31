@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance Boutique Hotel | Management System</title>
+    <style>
+      
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header" id="sidebar-toggle">
+                <div>
+                    <h1>Elegance Hotel</h1>
+                    <p>Boutique Management</p>
+                </div>
+                <i class="fas fa-bars d-md-none" id="menu-toggle-icon"></i>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-page="dashboard">
+                        <i class="fas fa-chart-line"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="bookings">
+                        <i class="fas fa-calendar-check"></i> Bookings
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="guests">
+                        <i class="fas fa-users"></i> Guests
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="rooms">
+                        <i class="fas fa-door-open"></i> Rooms
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-utensils"></i> Services
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-file-invoice-dollar"></i> Billing
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-chart-bar"></i> Reports
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="user-info">
+                <div class="user-avatar">BG</div>
+                <div class="user-details">
+                    <div class="user-name">Biggie Gus</div>
+                    <div class="user-role">Hotel Manager</div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- main content -->
+        <main class="main-content">
+            <!-- dashboard -->
+            <div class="dashboard-container" id="dashboard-page">
+                <div class="top-bar">
+                    <h2 class="page-title">Dashboard</h2>
+                    <div class="date-display" id="current-date">April 12, 2025</div>
+                </div>
+                
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <h3>Occupancy Rate</h3>
+                        <div class="stat-value">78%</div>
+                        <div class="stat-trend trend-up">
+                            <i class="fas fa-arrow-up"></i> 12% from last week
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h3>Rooms Occupied</h3>
+                        <div class="stat-value">18/24</div>
+                        <div class="stat-trend">
+                            4 check-ins expected today
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h3>Revenue (Today)</h3>
+                        <div class="stat-value">$1,876</div>
+                        <div class="stat-trend trend-up">
+                            <i class="fas fa-arrow-up"></i> $320 from yesterday
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h3>Pending Requests</h3>
+                        <div class="stat-value">7</div>
+                        <div class="stat-trend">
+                            2 require immediate attention
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="upcoming-section">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h3 class="section-title">Room Status</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        
+                        <div class="room-status-grid">
+                            <!-- <div class="room-item">
+                                <div class="room-number">101</div>
+                                <div class="room-type">Suite</div>
+                                <div class="room-status status-occupied">Occupied</div>
+                            </div>
+                            
+                            <div class="room-item">
+                                <div class="room-number">102</div>
+                                <div class="room-type">Deluxe</div>
+                                <div class="room-status status-available">Available</div>
+                            </div>
+                            
+                            <div class="room-item">
+                                <div class="room-number">103</div>
+                                <div class="room-type">Suite</div>
+                                <div class="room-status status-reserved">Reserved</div>
+                            </div>
+                            
+                            <div class="room-item">
+                                <div class="room-number">104</div>
+                                <div class="room-type">Standard</div>
+                                <div class="room-status status-cleaning">Cleaning</div>
+                            </div>
+                            
+                            <div class="room-item">
+                                <div class="room-number">105</div>
+                                <div class="room-type">Deluxe</div>
+                                <div class="room-status status-occupied">Occupied</div>
+                            </div>
+                            
+                            <div class="room-item">
+                                <div class="room-number">106</div>
+                                <div class="room-type">Standard</div>
+                                <div class="room-status status-available">Available</div>
+                            </div>
+                            
+                            <div class="room-item">
+                                <div class="room-number">201</div>
+                                <div class="room-type">Suite</div>
+                                <div class="room-status status-occupied">Occupied</div>
+                            </div>
+                            
+                            <div class="room-item">
+                                <div class="room-number">202</div>
+                                <div class="room-type">Deluxe</div>
+                                <div class="room-status status-occupied">Occupied</div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- just to visualize (implement list )--> 
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h3 class="section-title">Today's Arrivals</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        
+                        <ul class="guest-list">
+                            <li class="guest-item">
+                                <div class="guest-info">
+                                    <div class="guest-name">Emma Thompson</div>
+                                    <div class="guest-details">Arrival: 2:00 PM | Room: 203 (Deluxe)</div>
+                                </div>
+                                <button class="guest-action">Check In</button>
+                            </li>
+                            
+                            <li class="guest-item">
+                                <div class="guest-info">
+                                    <div class="guest-name">David Wilson</div>
+                                    <div class="guest-details">Arrival: 3:30 PM | Room: 304 (Suite)</div>
+                                </div>
+                                <button class="guest-action">Check In</button>
+                            </li>
+                            
+                            <li class="guest-item">
+                                <div class="guest-info">
+                                    <div class="guest-name">Jennifer Garcia</div>
+                                    <div class="guest-details">Arrival: 5:15 PM | Room: 206 (Standard)</div>
+                                </div>
+                                <button class="guest-action">Check In</button>
+                            </li>
+                            
+                            <li class="guest-item">
+                                <div class="guest-info">
+                                    <div class="guest-name">Michael Brown</div>
+                                    <div class="guest-details">Arrival: 7:45 PM | Room: 401 (Deluxe)</div>
+                                </div>
+                                <button class="guest-action">Check In</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- visualize (implement list) -->
+                <div class="upcoming-section">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h3 class="section-title">Today's Departures</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        
+                        <ul class="guest-list">
+                            <li class="guest-item">
+                                <div class="guest-info">
+                                    <div class="guest-name">Robert Johnson</div>
+                                    <div class="guest-details">Departure: 11:00 AM | Room: 205 (Deluxe)</div>
+                                </div>
+                                <button class="guest-action">Check Out</button>
+                            </li>
+                            
+                            <li class="guest-item">
+                                <div class="guest-info">
+                                    <div class="guest-name">Sarah Martinez</div>
+                                    <div class="guest-details">Departure: 12:00 PM | Room: 302 (Suite)</div>
+                                </div>
+                                <button class="guest-action">Check Out</button>
+                            </li>
+                            
+                            <li class="guest-item">
+                                <div class="guest-info">
+                                    <div class="guest-name">James Taylor</div>
+                                    <div class="guest-details">Departure: 1:30 PM | Room: 104 (Standard)</div>
+                                </div>
+                                <button class="guest-action">Check Out</button>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h3 class="section-title">Recent Requests</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        
+                        <ul class="guest-list">
+                            <li class="guest-item">
+                                <div class="guest-info">
+                                    <div class="guest-name">Room 202 - Extra Towels</div>
+                                    <div class="guest-details">Requested: 10:15 AM | Priority: Normal</div>
+                                </div>
+                                <button class="guest-action">Complete</button>
+                            </li>
+                            
+                            <li class="guest-item">
+                                <div class="guest-info">
+                                    <div class="guest-name">Room 304 - Room Service</div>
+                                    <div class="guest-details">Requested: 11:30 AM | Priority: High</div>
+                                </div>
+                                <button class="guest-action">Complete</button>
+                            </li>
+                            
+                            <li class="guest-item">
+                                <div class="guest-info">
+                                    <div class="guest-name">Room 103 - Maintenance</div>
+                                    <div class="guest-details">Requested: 9:45 AM | Priority: High</div>
+                                </div>
+                                <button class="guest-action">Complete</button>
+                            </li>
+                            
+                            <li class="guest-item">
+                                <div class="guest-info">
+                                    <div class="guest-name">Room 205 - Late Checkout</div>
+                                    <div class="guest-details">Requested: Yesterday | Priority: Normal</div>
+                                </div>
+                                <button class="guest-action">Complete</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bookings-container" id="bookings-page">
+                <div class="top-bar">
+                    <h2 class="page-title">Bookings Management</h2>
+                    <div class="action-buttons">
+                        <button id="new-booking-btn"><i class="fas fa-plus"></i> New Booking</button>
+                    </div>
+                </div>
+                
+                <div class="search-filter-bar">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search bookings...">
+                    </div>
+                    
+                    <div class="filter-options">
+                        <select id="status-filter">
+
+                            <option value="">All Statuses</option>
+                            <option value="confirmed">Confirmed</option>
+                            <option value="pending">Pending</option>
+                            <option value="cancelled">Cancelled</option>
+                            <option value="checked-in">Checked In</option>
+                            <option value="checked-out">Checked Out</option>
+                        </select>
+                        
+                        <select id="date-filter">
+
+                            <option value="">All Dates</option>
+                            <option value="today">Today</option>
+                            <option value="tomorrow">Tomorrow</option>
+                            <option value="this-week">This Week</option>
+                            <option value="next-week">Next Week</option>
+                            <option value="this-month">This Month</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Add inside <div class="bookings-container" id="bookings-page"> -->
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Guest</th>
+                                <th>Room</th>
+                                <th>Check-In</th>
+                                <th>Check-Out</th>
+                                <th>Status</th>
+                                <th>Total</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--hotelmain.js dynamic -->
+                        </tbody>
+                    </table>
+
+            </div>
+                <!-- booking creation modal -->
+                <div class="modal-overlay" id="booking-modal">
+                    <div class="modal">
+                    <div class="modal-header">
+                        <h3 class="modal-title">New Booking</h3>
+                        <button class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="booking-form">
+                        <div class="form-grid">
+                            <!-- guest dropdown -->
+                            <div class="form-group">
+                            <label class="form-label">Guest</label>
+                            <select class="form-control" name="guestId" id="guest-select" required></select>
+                            </div>
+                
+                            <!-- room dropdown -->
+                            <div class="form-group">
+                            <label class="form-label">Room</label>
+                            <select class="form-control" name="roomId" id="room-select" required></select>
+                            </div>
+                
+                            <div class="form-group">
+                            <label class="form-label">Check-In Date</label>
+                            <input type="date" class="form-control" name="checkIn" required>
+                            </div>
+                
+                            <div class="form-group">
+                            <label class="form-label">Check-Out Date</label>
+                            <input type="date" class="form-control" name="checkOut" required>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary">Cancel</button>
+                        <button class="btn btn-primary" id="submit-booking">Add Booking</button>
+                    </div>
+                    </div>
+                </div>
+
+
+                <div class="guests-container" id="guests-page">
+                    <div class="top-bar">
+                        <h2 class="page-title">Guest List</h2>
+                    </div>
+                    <div class="search-filter-bar">
+                        <div class="search-box">
+                          <input type="text" id="guest-search" placeholder="Search guests by name, email, or phone...">
+                        </div>
+                        <div class="action-buttons">
+                            <button id="new-guest-btn"><i class="fas fa-plus"></i> Add Guest</button>
+                          </div>
+                    </div>
+
+                    
+                      
+
+                      
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Notes</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- guest data -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="rooms-container" id="rooms-page">
+                    <div class="top-bar">
+                        <h2 class="page-title">Room Inventory</h2>
+                    </div>
+                    <div class="search-filter-bar">
+                        <div class="search-box">
+                          <input type="text" id="room-search" placeholder="Search rooms by type, status, or guest...">
+                        </div>
+                      </div>
+                      
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Room ID</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Current Guest</th>
+                                <th>Rate ($)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--  room data -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                
+  
+        </main>   
+         
+        
+
+
+
+
+        <!-- guest modal -->
+<div class="modal-overlay" id="guest-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="guest-modal-title">Add Guest</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="guest-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" name="name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone</label>
+              <input type="text" class="form-control" name="phone" required>
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Notes</label>
+              <textarea class="form-control" name="notes"></textarea>
+            </div>
+          </div>
+          <input type="hidden" name="id">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary">Cancel</button>
+        <button class="btn btn-primary" id="guest-modal-submit">Save</button>
+      </div>
+    </div>
+  </div>
+  
+            <script src="hotelmain.js"></script>
+</body>            
+           
+
+                            
